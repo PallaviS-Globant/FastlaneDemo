@@ -5,17 +5,73 @@
 #
 #     https://docs.fastlane.tools/actions
 #
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
   lane :beta do
-  #build_app(scheme: "FastlaneDemo")
-   match(type: "adhoc")
-    gym(export_method: "ad-hoc")
+    createReleaseBuild
+    deployBuild
   end
+
+
+  desc "Creating release build"
+  lane :createReleaseBuild do
+    increment_build_number
+    gym(
+      configuration: "Release",
+      scheme: "FastlaneDemo",
+      export_method: 'app-store',
+      include_symbols: false,
+      include_bitcode: false,
+      codesigning_identity: "iPhone Distribution: Bhushan Waghode",
+      include_symbols: false,
+      include_bitcode: false,
+      export_options: {
+          method: "release",
+          signingStyle: "manual",
+          provisioningProfiles:{
+            "com.pallavi.fastlanedemo1" => "FastlaneDemoAppStoreProvPRofile16thApr"
+          }
+        }
+   )
+  end
+
+  desc "Creating development build"
+  lane :createDevBuild do
+    increment_build_number
+    gym(
+        
+        scheme: "FastlaneDemo",
+        export_method: 'development',
+        codesigning_identity: "iPhone Developer: Bhushan Waghode",
+        
+        export_options: {
+            method: "development",
+            signingStyle: "manual",
+            compileBitcode: false,
+            provisioningProfiles:{
+            "com.pallavi.fastlanedemo1" => "fastLaneDemoDevelopementProvisioningProfile",
+          }
+
+          }
+     )
+  end
+
+
+  desc "Deploy build"
+  lane :deployBuild do
+    deliver(
+        submit_for_review:false,
+        force:false,
+      )
+  end 
 end
