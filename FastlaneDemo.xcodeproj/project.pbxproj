@@ -430,15 +430,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2XQTV6PHU;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dinesh Challa (8N5A6T7RGD)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 46TZ85ZB65;
 				INFOPLIST_FILE = FastlaneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.globant.FastlaneDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pallavi.fastlanedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e2cd6792-df9f-4a94-a348-fc45257d1622";
+				PROVISIONING_PROFILE_SPECIFIER = FastlaneDemoDevelopementProfile16thApr;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,15 +451,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2XQTV6PHU;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dinesh Challa (46TZ85ZB65)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 46TZ85ZB65;
 				INFOPLIST_FILE = FastlaneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.globant.FastlaneDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pallavi.fastlanedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c61a9e81-ee83-4997-a454-4a0957b3deb7";
+				PROVISIONING_PROFILE_SPECIFIER = FastlaneDemoAppStoreProvPRofile16thApr;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
